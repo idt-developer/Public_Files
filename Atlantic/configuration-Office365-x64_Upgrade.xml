@@ -1,0 +1,29 @@
+<Configuration>
+    <!--  Remove MSI-based Office products  -->
+    <RemoveMSI/>
+    <IgnoreProduct ID="PrjPro"/>
+    <IgnoreProduct ID="PrjStd"/>
+    <IgnoreProduct ID="VisPro"/>
+    <IgnoreProduct ID="VisStd"/>
+    <!--  Remove specific Click-to-Run Office products  -->
+    <Remove>
+        <Product ID="Standard2021Volume"/>
+        <Product ID="O365ProPlusRetail"/>
+    </Remove>
+    <!--  Install Office 365 ProPlus  -->
+    <Add OfficeClientEdition="64" Channel="MonthlyEnterprise">
+        <Product ID="O365ProPlusRetail">
+            <Language ID="en-us"/>
+            <ExcludeApp ID="Groove"/>
+            <ExcludeApp ID="Lync"/>
+            <ExcludeApp ID="Bing"/>
+        </Product>
+    </Add>
+    <Display Level="Full" AcceptEULA="True"/>
+    <Property Name="SharedComputerLicensing" Value="1"/>
+    <Property Name="FORCEAPPSHUTDOWN" Value="TRUE"/>
+    <Property Name="DeviceBasedLicensing" Value="0"/>
+    <Property Name="SCLCacheOverride" Value="0"/>
+    <Property Name="AUTOACTIVATE" Value="1"/>
+    <Updates Enabled="True"/>
+</Configuration>
